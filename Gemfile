@@ -7,12 +7,12 @@ gem "rails", "~> 7.1.6"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
-
+gem 'json', '~> 2.7'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
 
-gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers', '~> 0.10.14'
 gem 'activerecord-reset-pk-sequence'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]

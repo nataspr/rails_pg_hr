@@ -49,8 +49,19 @@ module Api
 
       # PUT /api/v1/companies/:id/mark_deleted (Глава 7)
       def mark_deleted
-        @company.delete_company
-        render json: { status: 'success', code: 200, deleted_company: @company }, status: :ok
+        if @company.deleted
+          render json: { 
+            deleted_company: [], 
+            deleted_already: :not_modified 
+          }, status: :not_modified
+        else
+          @company.delete_company
+          render json: { 
+            deleted_company: @company, 
+            code: 200, 
+            status: :success 
+          }, status: :ok
+        end
       end
 
       private

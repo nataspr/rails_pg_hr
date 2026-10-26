@@ -5,4 +5,9 @@ class Company < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 2, maximum: 100 }
   validates :location, presence: true
+
+  #  метод для мягкого удаления
+  def delete_company
+    update(deleted: true)
+  end
 end
